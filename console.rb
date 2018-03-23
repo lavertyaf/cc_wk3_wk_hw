@@ -101,3 +101,8 @@ puts ""
 ticket7.film_id = film3.id
 ticket7.update
 p ticket7
+
+puts ""
+p film1.all_attendees
+puts ""
+p customer2.all_films_watched
