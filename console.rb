@@ -71,7 +71,7 @@ ticket6 = Ticket.new({
   })
 
 ticket7 = Ticket.new({
-  'customer_id' => customer3.id, 'film_id' => film3.id
+  'customer_id' => customer3.id, 'film_id' => film1.id
   })
 
 ticket1.save()
@@ -81,3 +81,23 @@ ticket4.save()
 ticket5.save()
 ticket6.save()
 ticket7.save()
+
+p customer1
+puts ""
+customer1.name = 'Kathryn'
+customer1.update
+p customer1
+puts ""
+
+p film1
+puts ""
+film1.title = 'Mamma Mia 2'
+film1.update
+p film1
+puts ""
+
+p ticket7
+puts ""
+ticket7.film_id = film3.id
+ticket7.update
+p ticket7
