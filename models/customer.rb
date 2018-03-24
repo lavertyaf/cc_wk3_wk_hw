@@ -56,14 +56,8 @@ class Customer
     return data.length
   end
 
-  def no_funds?
-    return @funds <= 0
-  end
-
   def reduce_wallet(customer, film)
-    if no_funds? == false
     @funds -= film.price
-    end
   end
 
 end

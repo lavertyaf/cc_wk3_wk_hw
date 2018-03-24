@@ -112,3 +112,4 @@ puts ""
 p film3.how_many_tickets_sold
 puts ""
 p customer1.reduce_wallet(customer1, film2)
+customer1.update 
