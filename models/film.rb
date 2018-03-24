@@ -52,4 +52,12 @@ attr_accessor :title, :price
     return attendee_data.map{ |customer|  Customer.new(customer)}
   end
 
+  def how_many_tickets_sold()
+    sql = "SELECT * FROM customers INNER JOIN tickets ON tickets.customer_id = customerS.id WHERE film_id = $1"
+    values = [@id]
+    ticket_data = SqlRunner.run(sql, values)
+    data = ticket_data.map{ |film| Film.new(film) }
+    return data.length
+  end
+
 end

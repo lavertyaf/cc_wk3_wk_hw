@@ -48,4 +48,22 @@ class Customer
     return film_data.map{ |film|  Film.new(film)}
   end
 
+  def tickets_bought()
+    sql = "SELECT * FROM customers INNER JOIN tickets ON customers.id = tickets.customer_id WHERE customers.id = $1"
+    values =[@id]
+    ticket_data = SqlRunner.run(sql, values)
+    data = ticket_data.map{ |customer| Customer.new(customer) }
+    return data.length
+  end
+
+  def no_funds?
+    return @funds <= 0
+  end
+
+  def reduce_wallet(customer, film)
+    if no_funds? == false
+    @funds -= film.price
+    end
+  end
+
 end

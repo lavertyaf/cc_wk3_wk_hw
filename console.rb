@@ -106,3 +106,9 @@ puts ""
 p film1.all_attendees
 puts ""
 p customer2.all_films_watched
+puts ""
+p customer2.tickets_bought
+puts ""
+p film3.how_many_tickets_sold
+puts ""
+p customer1.reduce_wallet(customer1, film2)
